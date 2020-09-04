@@ -30,6 +30,10 @@ Update the Ubuntu instance:
 `sudo apt-get update && sudo apt-get upgrade`
 
 Check that Ubuntu instance has Python, npm, nodejs, git installed.
+```
+$ python3 --version
+Python 3.6.9
+```
 
 To check that nodejs is install run command:
 
