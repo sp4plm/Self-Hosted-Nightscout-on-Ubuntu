@@ -1,14 +1,5 @@
 # Self-Hosted-Nightscout-on-Ubuntu
 
-Update the Ubuntu instance:
-`sudo apt-get update && sudo apt-get upgrade`
-
-Update node:
-```
-sudo npm cache clean -f
-sudo npm install -g n
-sudo n stable
-```
 ## Create a New User with root privilege
 Once you are logged in as root, we’re prepared to add the new user account that we will use to log in from now on.
 
@@ -21,6 +12,19 @@ To add these privileges to our new user, we need to add the new user to the “s
 
 `# usermod -aG sudo sammy`
 
+## Prepare for installation
+
+Update the Ubuntu instance:
+`sudo apt-get update && sudo apt-get upgrade`
+
+Update node:
+```
+sudo npm cache clean -f
+sudo npm install -g n
+sudo n stable
+```
+
+## Install Mongo DB
 
 ## Install CGM-Remote-Monitor (Nightscout)
 Install Node.js and npm  `sudo apt-get install nodejs npm`
