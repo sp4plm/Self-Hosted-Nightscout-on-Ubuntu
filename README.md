@@ -174,7 +174,9 @@ $ pwd
 ```
 
 Download cgm-remote-monitor (nightscout) from github:
-`git clone https://github.com/nightscout/cgm-remote-monitor.git`
+
+`$ git clone https://github.com/nightscout/cgm-remote-monitor.git`
+
 Alternatively fork a copy of cgm-remote-monitor and clone your own copy.
 
 `cd cgm-remote-monitor`
