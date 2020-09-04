@@ -127,6 +127,16 @@ Also, connect MongoDB using the command line and execute some test commands for 
   { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
 ```
 
+### Step 6 – Configure MongoDB
+
+Then create a new database and a new user:
+
+$ mongo
+> use Nightscout
+> db.createUser({user: "mainuser", pwd: "YouPassword", roles:["readWrite"]})
+> quit()
+
+
 ## Install CGM-Remote-Monitor (Nightscout)
 Install Node.js and npm  `sudo apt-get install nodejs npm`
 
