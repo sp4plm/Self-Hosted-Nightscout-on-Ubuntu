@@ -12,6 +12,7 @@ This command creates a new user called “mainuser”, but you can replace it wi
 ## 2. Prepare for installation
 
 Update the Ubuntu instance:
+
 `sudo apt-get update && sudo apt-get upgrade`
 
 Check that Ubuntu instance has Python, npm, nodejs, git installed.
