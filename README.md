@@ -231,7 +231,7 @@ We should make start.sh executable:
 
 
 ## Install pm2 to monitor nightscout processs
-`sudo npm install pm2 -g`
+`$ sudo npm install pm2 -g`
 
 Start cgm-remote-monitor with pm2:
 `env $(cat my.env)  PORT=1337 pm2 start server.js`
@@ -272,5 +272,6 @@ server {
 }
 ```
 
-Then restart the nginx service 
+Then restart the nginx service: 
+
 `$ sudo service nginx restart`
