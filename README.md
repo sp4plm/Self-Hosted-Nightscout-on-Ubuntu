@@ -131,8 +131,8 @@ Use the following commands to stop or restart MongoDB service.
 
 Finally, use the below command to check installed MongoDB version on your system.
 
-`$ mongod --version` 
 ```
+$ mongod --version
   db version v4.2.8
   git version: 43d25964249164d76d5e04dd6cf38f6111e21f5f
   OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
@@ -147,10 +147,13 @@ Also, connect MongoDB using the command line and execute some test commands for 
 
 ```
 $ mongo
- > use mydb;
- > db.test.save( { tecadmin: 100 } )
- > db.test.find()
-  { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
+  > show dbs
+    admin   0.000GB
+    config  0.000GB
+    local   0.000GB
+  > use admin
+   switched to db admin
+  > quit()
 ```
 
 ### Step 6 – Configure MongoDB
