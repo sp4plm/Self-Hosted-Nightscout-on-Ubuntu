@@ -33,7 +33,22 @@ Check that Ubuntu instance has Python, npm, nodejs, git installed.
 ```
 $ python3 --version
 Python 3.6.9
+```
 
+Ubuntu 18.04 comes with pre-installed Python 3 as a default python interpreter. But we need python 2:
+
+`$ sudo apt install python`
+
+Then check installation:
+
+```
+$ python -V
+Python 2.7.17
+```
+
+Then check git is installed:
+
+```
 $ git --version
 git version 2.17.1
 ```
