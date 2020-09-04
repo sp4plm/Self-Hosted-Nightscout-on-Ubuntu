@@ -225,26 +225,18 @@ export TIME_FORMAT=24
 export INSECURE_USE_HTTP=true
 
 # start server
-node server.js
+/home/mainuser/.nvm/versions/node/v10.16.3/bin/node server.js
 ```
 
 We should make start.sh executable:
 
 `$ chmod +100 +010 start.sh `
 
+## Run Nightscout
 
-## Install pm2 to monitor nightscout processs
-`$ sudo npm install pm2 -g`
+You can now run Nightscout by entering:
 
-Start cgm-remote-monitor with pm2:
-`env $(cat my.env)  PORT=1337 pm2 start server.js`
-
-Make pm2 start cgm-remote-monitor on startup
-`pm2 startup ubuntu` - this will give you a command you need to run as superuser to allow pm2 to start the app on reboot 
-The command will be something like:
-`sudo su -c "env PATH=$PATH:/usr/bin pm2 startup ubuntu -u username --hp /home/username"`
-And then:
-`pm2 save`
+`$ ./start.sh.`
 
 ## Create Reverse nginx proxy
 
