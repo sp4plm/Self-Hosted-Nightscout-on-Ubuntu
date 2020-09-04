@@ -209,7 +209,7 @@ Now setup your cgm-remote-monitor environment and create start file:
 Paste those lines (a detailed description of the variables is here):
 
 ```
-#!/usr/bin/bash
+#!/bin/bash
 
 # environment variables
 export DISPLAY_UNITS="mg/dl"
