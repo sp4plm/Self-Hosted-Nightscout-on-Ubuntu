@@ -41,21 +41,21 @@ git version 2.17.1
 
 To check that nodejs is install run command:
 
- `dpkg --get-selections | grep node`
+ `$ dpkg --get-selections | grep node`
 
 If you want to install another version of nodejs, remove the old one:
 
- `sudo apt purge nodejs`
+ `$ sudo apt purge nodejs`
 
 ### Install NODE.JS with node version manager
 
 To install Node js on Ubuntu 18.04 with NVM we need C++ copiler and some other tools. To install them run command:
 
- `sudo apt install build-essential checkinstall`
+ `$ sudo apt install build-essential checkinstall`
 
 We also nedd libssl:
 
- `sudo apt install libssl-dev`
+ `$ sudo apt install libssl-dev`
 
 To install NVM run:
 
@@ -203,7 +203,7 @@ And then:
 
 Install nginx:
 
-`sudo apt-get install nginx`
+`$ sudo apt-get install nginx`
 
 edit this file:
 
@@ -229,4 +229,4 @@ server {
 ```
 
 Then restart the nginx service 
-`sudo service nginx restart`
+`$ sudo service nginx restart`
