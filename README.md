@@ -230,7 +230,7 @@ node server.js
 
 We should make start.sh executable:
 
-`$ chmod +100 start.sh `
+`$ chmod +100 +010 start.sh `
 
 
 ## Install pm2 to monitor nightscout processs
