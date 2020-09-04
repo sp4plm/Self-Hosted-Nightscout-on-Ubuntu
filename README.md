@@ -105,6 +105,7 @@ Lets add MongoDB APT repository url in /etc/apt/sources.list.d/mongodb.list.
 
 After adding required APT repositories, use the following commands to install MongoDB on your systems. It will also install all dependent packages required for MongoDB.
 
+`sudo apt update`
 `$ sudo apt install mongodb-org`
 
 If you want to install any specific version of MongoDB, define the version number as below. In order to migrate from Atlas I choose the same version of Mongo DB.
