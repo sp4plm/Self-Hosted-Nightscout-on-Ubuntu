@@ -16,54 +16,53 @@ Update the Ubuntu instance:
 
 Check that Ubuntu instance has Python, npm, nodejs, git installed.
 
-Сначала давайте проверим установлена ли у вас программа nodejs:
+To check that nodejs is install run command:
 
  `dpkg --get-selections | grep node`
 
-Теперь вы можете ее удалить с помощью следующих команд:
+If you want to install another version of nodejs, remove the old one:
 
  `sudo apt purge nodejs`
- 
 
-### УСТАНОВКА NODE.JS В NODE VERSION MANAGER
+### Install NODE.JS with node version manager
 
-Чтобы установить Node js Ubuntu 18.04 с помощью NVM нам понадобится компилятор C++ в системе, а также другие инструменты для сборки. По умолчанию система не поставляется с этими программами, поэтому их необходимо установить. Для этого выполните команду:
+To install Node js on Ubuntu 18.04 with NVM we need C++ copiler and some other tools. To install them run command:
 
  `sudo apt install build-essential checkinstall`
 
-Также нам понадобится libssl:
+We also nedd libssl:
 
  `sudo apt install libssl-dev`
 
-Скачать и установить менеджер версий NVM можно с помощью следующей команды:
+To install NVM run:
 
 `$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash`
 
-После завершения установки вам понадобится перезапустить терминал. Или можно выполнить:
+Restart terminal or run:
 
 `$ source /etc/profile`
 
-Затем смотрим список доступных версий Node js:
+Look throw Node js avalibale versions:
 
 `$ nvm ls-remote`
 
-Дальше можно устанавливать Node js в Ubuntu, при установке обязательно указывать версию, на данный момент самая последняя 11.0, но установим десятую:
+Now install Node js. It obligatory to point a version of node js:
 
-`$ nvm install 10.0`
+`$ nvm install 11.0`
 
-Список установленных версий вы можете посмотреть выполнив:
+A list of installed versions of node js can be viewed by:
 
 `$ nvm list`
 
-Дальше необходимо указать менеджеру какую версию нужно использовать:
+Tell the NVM what version of node js to use:
 
- `$ nvm use 10.0`
+ `$ nvm use 11.0`
  
-Чтобы удалить эту версию node js, ее нужно деактивировать:
+For further update to remove installed version it should be deactivated:
 
- `$ nvm deactivate 10.0`
+ `$ nvm deactivate 11.0`
 
-Затем можно удалить:
+And now can be removed:
 
  `$ nvm uninstall 10.0`
 
