@@ -214,7 +214,7 @@ Paste those lines (a detailed description of the variables is here):
 # environment variables
 export DISPLAY_UNITS="mg/dl"
 export MONGO_CONNECTION="mongodb://mainuser:YouPassword@localhost:27017/Nightscout"
-export PORT=80
+export BASE_URL="127.0.0.1:1337"
 export API_SECRET="YOUR_API_SECRET_HERE"
 export PUMP_FIELDS="reservoir battery status"
 export DEVICESTATUS_ADVANCED=true
@@ -224,6 +224,11 @@ export TIME_FORMAT=24
 # start server
 node server.js
 ```
+
+We should make start.sh executable:
+
+`$ chmod +100 start.sh `
+
 
 ## Install pm2 to monitor nightscout processs
 `sudo npm install pm2 -g`
