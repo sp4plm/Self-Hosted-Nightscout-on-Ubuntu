@@ -9,6 +9,20 @@ This command creates a new user called “mainuser”, but you can replace it wi
 
 `# adduser mainuser`
 
+Grant Root Privileges for the mainuser:
+
+`# usermod -aG sudo mainuser`
+
+Verify mainuser and its Privileges:
+
+`# su mainuser`
+
+```
+$ grep '^sudo' /etc/group
+
+sudo:x:27:ihc,mainuser
+```
+
 ## 2. Prepare for installation
 
 Update the Ubuntu instance:
