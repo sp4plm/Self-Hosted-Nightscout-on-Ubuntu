@@ -182,10 +182,17 @@ Alternatively fork a copy of cgm-remote-monitor and clone your own copy.
 `cd cgm-remote-monitor`
 
 Install cgm-remote-monitor:
-`git checkout dev`
-`npm install` 
+
+`$ git checkout dev`
+
+`$ npm install` 
 
 setup your cgm-remote-monitor environment as you normally would, for example creating a file my.env :
+
+`$ nano my.env`
+
+Insert this text:
+
 ```
 MONGO_CONNECTION=MONGOCONNECTIONSTRING
 DISPLAY_UNITS=mmol
