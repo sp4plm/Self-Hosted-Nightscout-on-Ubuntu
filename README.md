@@ -76,8 +76,7 @@ First of all, import GPK key for the MongoDB apt repository on your system using
 
 Lets add MongoDB APT repository url in /etc/apt/sources.list.d/mongodb.list.
 
-Ubuntu 18.04 LTS:
-echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+`$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list`
 
 ### Step 2 – Install MongoDB on Ubuntu
 
