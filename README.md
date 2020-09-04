@@ -71,7 +71,7 @@ Look throw Node js avalibale versions:
 
 Now install Node js. It obligatory to point a version of node js:
 
-`$ nvm install 11.0`
+`$ nvm install 10.0`
 
 A list of installed versions of node js can be viewed by:
 
@@ -79,11 +79,11 @@ A list of installed versions of node js can be viewed by:
 
 Tell the NVM what version of node js to use:
 
- `$ nvm use 11.0`
+ `$ nvm use 10.0`
  
 For further update to remove installed version it should be deactivated:
 
- `$ nvm deactivate 11.0`
+ `$ nvm deactivate 10.0`
 
 And now can be removed:
 
