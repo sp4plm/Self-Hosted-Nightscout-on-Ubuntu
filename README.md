@@ -118,11 +118,13 @@ If you want to install any specific version of MongoDB, define the version numbe
 After installation, MongoDB will start automatically. To start or stop MongoDB uses init script. Below are the example commands to do.
 
 `$ sudo systemctl enable mongod`
+
 `$ sudo systemctl start mongod`
 
 Use the following commands to stop or restart MongoDB service.
 
 `$ sudo systemctl stop mongod`
+
 `$ sudo systemctl restart mongod`
 
 ### Step 5 – Verify MongoDB Installation
