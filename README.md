@@ -167,7 +167,11 @@ $ mongo
 ```
 
 ## Install CGM-Remote-Monitor (Nightscout)
-Install Node.js and npm  `sudo apt-get install nodejs npm`
+Check you location:
+```
+$ pwd
+> /home/mainuser
+```
 
 Download cgm-remote-monitor (nightscout) from github:
 `git clone https://github.com/nightscout/cgm-remote-monitor.git`
