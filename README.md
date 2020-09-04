@@ -1,21 +1,20 @@
 # VPS-Hosted-Nightscout-on-Ubuntu 18
 
-## Create a New User with root privilege
-Once you are logged in as root, we’re prepared to add the new user account that we will use to log in from now on.
+When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
-This example creates a new user called “mainuser”, but you should replace it with a username that you like:
+## 1. Create a New User
+Once you are logged in your Ubuntu instance as root, you are prepared to add the new user account that we will use to log in from now on.
+
+This command creates a new user called “mainuser”, but you can replace it with a username that you like:
 
 `# adduser mainuser`
 
-Now, we have a new user account with regular account privileges. However, we may sometimes need to do administrative tasks.
-To add these privileges to our new user, we need to add the new user to the “sudo” group.
-
-`# usermod -aG sudo mainuser`
-
-## Prepare for installation
+## 2. Prepare for installation
 
 Update the Ubuntu instance:
 `sudo apt-get update && sudo apt-get upgrade`
+
+Check that Ubuntu instance has Python, npm, nodejs, git installed.
 
 Update node:
 ```
