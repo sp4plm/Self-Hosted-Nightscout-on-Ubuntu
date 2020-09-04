@@ -202,23 +202,27 @@ Install cgm-remote-monitor:
 
 `$ npm install` 
 
-setup your cgm-remote-monitor environment as you normally would, for example creating a file my.env :
+Now setup your cgm-remote-monitor environment and create start file:
 
-`$ nano my.env`
+`$ nano start.sh`
 
-Insert this text:
+Paste those lines (a detailed description of the variables is here):
 
 ```
-MONGO_CONNECTION=MONGOCONNECTIONSTRING
-DISPLAY_UNITS=mmol
-BASE_URL=NIGHTSCOUT_SITE_URL
-DEVICESTATUS_ADVANCED="true"
-mongo_collection="mogocollection_name"
-API_SECRET=AVeryLongString
-ENABLE=careportal%20openaps%20iob%20bwp%20cage%20basal%20pump%20bridge
-BRIDGE_SERVER=EU
-BRIDGE_USER_NAME=USERNAME
-BRIDGE_PASSWORD=PASSWORD
+#!/usr/bin/bash
+
+# environment variables
+export DISPLAY_UNITS="mg/dl"
+export MONGO_CONNECTION="mongodb://mainuser:YouPassword@localhost:27017/Nightscout"
+export PORT=80
+export API_SECRET="YOUR_API_SECRET_HERE"
+export PUMP_FIELDS="reservoir battery status"
+export DEVICESTATUS_ADVANCED=true
+export ENABLE="careportal iob cob openaps pump bwg rawbg basal"
+export TIME_FORMAT=24
+
+# start server
+node server.js
 ```
 
 ## Install pm2 to monitor nightscout processs
