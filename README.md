@@ -251,7 +251,7 @@ Install nginx:
 
 edit this file:
 
-`sudo nano /etc/nginx/sites-available/default `
+`$ sudo nano /etc/nginx/sites-available/default `
 
 Delete the existing contents and replace with this:
 
