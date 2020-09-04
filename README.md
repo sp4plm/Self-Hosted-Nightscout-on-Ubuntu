@@ -106,7 +106,7 @@ Use the following commands to stop or restart MongoDB service.
 Finally, use the below command to check installed MongoDB version on your system.
 
 `$ mongod --version` 
-
+```
   db version v4.2.8
   git version: 43d25964249164d76d5e04dd6cf38f6111e21f5f
   OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
@@ -116,19 +116,17 @@ Finally, use the below command to check installed MongoDB version on your system
       distmod: ubuntu1804
       distarch: x86_64
       target_arch: x86_64
-      
+```      
 Also, connect MongoDB using the command line and execute some test commands for checking proper working.
 
-mongo 
+`$ mongo`
 
+```
 > use mydb;
-
 > db.test.save( { tecadmin: 100 } )
-
 > db.test.find()
-
   { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
-
+```
 
 ## Install CGM-Remote-Monitor (Nightscout)
 Install Node.js and npm  `sudo apt-get install nodejs npm`
