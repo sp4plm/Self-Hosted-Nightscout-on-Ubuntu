@@ -274,7 +274,42 @@ server {
     }
 }
 ```
-
 Then restart the nginx service: 
 
 `$ sudo service nginx restart`
+
+## Create a service
+
+I recommend using a systemd service which automatically starts Nightscout on system startup. To do so, create file:
+
+`$ nano /etc/systemd/system/nightscout.service`
+
+and paste the following configuration:
+
+```
+[Unit]
+Description=Nightscout Service      
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/your/nightscout/path/cgm-remote-monitor
+ExecStart=/your/nightscout/path/cgm-remote-monitor/start.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Reload systemd:
+
+`$ sudo systemctl daemon-reload`
+
+Start and enable
+
+`$ sudo systemctl enable nightscout.service`
+
+`$ sudo systemctl start nightscout.service`
+
+Finally check if the service is running:
+
+`$ sudo systemctl status nightscout.service`
