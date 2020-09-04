@@ -34,7 +34,7 @@ Check that Ubuntu instance has Python, npm, nodejs, git installed.
 $ python3 --version
 Python 3.6.9
 
-~$ git --version
+$ git --version
 git version 2.17.1
 ```
 
