@@ -251,9 +251,9 @@ Install nginx:
 
 edit this file:
 
-`sudo vi /etc/nginx/sites-available/default `
+`sudo nano /etc/nginx/sites-available/default `
+
 Delete the existing contents and replace with this:
-I'm assuming the proxy is on the same host as nightscout and the `proxy_pass http://127.0.0.1:1337` line - `1337` is replaced with the port that nightscout is using
 
 ```
 server {
