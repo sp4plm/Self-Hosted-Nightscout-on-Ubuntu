@@ -25,6 +25,64 @@ sudo n stable
 ```
 
 ## Install Mongo DB
+Step 1 – Setup Apt Repository
+
+First of all, import GPK key for the MongoDB apt repository on your system using the following command. This is required to test packages before installation
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 4B7C549A058F8B6B
+Lets add MongoDB APT repository url in /etc/apt/sources.list.d/mongodb.list.
+
+Ubuntu 18.04 LTS:
+echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+Ubuntu 16.04 LTS:
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list
+Step 2 – Install MongoDB on Ubuntu
+
+After adding required APT repositories, use the following commands to install MongoDB on your systems. It will also install all dependent packages required for MongoDB.
+
+sudo apt update
+sudo apt install mongodb-org
+If you want to install any specific version of MongoDB, define the version number as below
+
+sudo apt install mongodb-org=4.2.8 mongodb-org-server=4.2.8 mongodb-org-shell=4.2.8 mongodb-org-mongos=4.2.8 mongodb-org-tools=4.2.8
+Step 3 – Manage MongoDB Service
+
+After installation, MongoDB will start automatically. To start or stop MongoDB uses init script. Below are the example commands to do.
+
+sudo systemctl enable mongod
+sudo systemctl start mongod 
+Use the following commands to stop or restart MongoDB service.
+
+sudo systemctl stop mongod
+sudo systemctl restart mongod 
+How to Work with MongoDB – Read this tutorial
+Step 5 – Verify MongoDB Installation
+
+Finally, use the below command to check installed MongoDB version on your system.
+
+mongod --version 
+
+db version v4.2.8
+git version: 43d25964249164d76d5e04dd6cf38f6111e21f5f
+OpenSSL version: OpenSSL 1.1.1  11 Sep 2018
+allocator: tcmalloc
+modules: none
+build environment:
+    distmod: ubuntu1804
+    distarch: x86_64
+    target_arch: x86_64
+Also, connect MongoDB using the command line and execute some test commands for checking proper working.
+
+mongo 
+
+> use mydb;
+
+> db.test.save( { tecadmin: 100 } )
+
+> db.test.find()
+
+  { "_id" : ObjectId("52b0dc8285f8a8071cbb5daf"), "tecadmin" : 100 }
+
 
 ## Install CGM-Remote-Monitor (Nightscout)
 Install Node.js and npm  `sudo apt-get install nodejs npm`
