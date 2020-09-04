@@ -1,4 +1,4 @@
-# Self-Hosted-Nightscout-on-Ubuntu
+# VPS-Hosted-Nightscout-on-Ubuntu 18
 
 ## Create a New User with root privilege
 Once you are logged in as root, we’re prepared to add the new user account that we will use to log in from now on.
