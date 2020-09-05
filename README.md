@@ -1,5 +1,17 @@
 # VPS-Hosted-Nightscout-on-Ubuntu 18
 
+## Table of contents
+* [1. Create a New User]
+* [2. Prepare for installation]
+ * [2.1 Install NODE.JS with node version manager]
+* [3. Install Mongo DB]
+* [Step 1 – Setup Apt Repository]
+* [Step 2 – Install MongoDB on Ubuntu]
+* [Step 3 – Manage MongoDB Service]
+* [Step 4 – Verify MongoDB Installation]
+* [Step 5 – Configure MongoDB]
+
+
 When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
 ## 1. Create a New User
@@ -62,7 +74,7 @@ If you want to install another version of nodejs, remove the old one:
 
  `$ sudo apt purge nodejs`
 
-### Install NODE.JS with node version manager
+### 2.1 Install NODE.JS with node version manager
 
 To install Node js on Ubuntu 18.04 with NVM we need C++ copiler and some other tools. To install them run command:
 
@@ -104,7 +116,7 @@ And now can be removed:
 
  `$ nvm uninstall 10.0`
 
-## Install Mongo DB
+## 3. Install Mongo DB
 
 ### Step 1 – Setup Apt Repository
 
@@ -142,7 +154,7 @@ Use the following commands to stop or restart MongoDB service.
 
 `$ sudo systemctl restart mongod`
 
-### Step 5 – Verify MongoDB Installation
+### Step 4 – Verify MongoDB Installation
 
 Finally, use the below command to check installed MongoDB version on your system.
 
@@ -171,7 +183,7 @@ $ mongo
   > quit()
 ```
 
-### Step 6 – Configure MongoDB
+### Step 5 – Configure MongoDB
 
 Then create a new database and a new user:
 ```
