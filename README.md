@@ -305,3 +305,108 @@ Start and enable
 Finally check if the service is running:
 
 `$ sudo systemctl status nightscout.service`
+
+## Let's Encrypt SSL
+
+install Let's Encrypt: 
+
+`$ sudo apt-get install letsencrypt python-certbot-nginx`
+
+### Obtain SSL certificate using webroot plugin
+
+Stop ngnix service: 
+
+`$ sudo service nginx stop`
+
+Obtain letsencrypt certificate: 
+
+`$ sudo letsencrypt certonly` 
+
+```
+How would you like to authenticate with the ACME CA?
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+1: Nginx Web Server plugin - Alpha (nginx)
+2: Spin up a temporary webserver (standalone)
+3: Place files in webroot directory (webroot)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Select the appropriate number [1-3] then [enter] (press 'c' to cancel): 
+> 2
+```
+
+Enter your domain name when prompted. This will create the certificates for your domain name. The certificates should now be available at "/etc/letsencrypt/live/your_domain_name"
+
+Improve SSL security by generating a strong Diffie-Hellman group: 
+
+`$ sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048`
+
+Modify the nginx-file, filling in your domain name as in the example below:
+
+`$ nano etc/nginx/sites-enabled/defaults`
+
+```
+server {
+    listen 80;
+
+    server_name yourdomain.com;
+
+    location / {
+        proxy_pass http://127.0.0.1:1337;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+        listen       443 ssl;
+
+    server_name   yourdomain.com;
+        root         /usr/share/nginx/html;
+
+        ssl_certificate     /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+        ssl_prefer_server_ciphers on;
+        ssl_dhparam /etc/ssl/certs/dhparam.pem;
+        ssl_ciphers 'ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM$
+CDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AE$
+HE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-EC$
+84:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES$
+RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-$
+HA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aE$
+S-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA';
+        ssl_session_timeout 1d;
+        ssl_session_cache shared:SSL:50m;
+        ssl_stapling on;
+        ssl_stapling_verify on;
+        add_header Strict-Transport-Security max-age=15768000;
+
+        location ~ /.well-known {
+                allow all;
+        }
+}
+```
+
+Close the editor and check that your nginx configuration file is valid:
+
+```
+$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+```
+
+If there are errors in your configuration file, the command's output will tell you exactly where in the file the error was found.
+
+Restart nginx: 
+
+`$ sudo service nginx restart`
+
+You can test the quality of the SSL connection using: https://www.ssllabs.com/ssltest/analyze.html?d=your_domain_name Unfortunately only works with port 443
+
+Arrange auto renewal of certificates. Add this line to the su crontab: 
+
+`$ sudo crontab -e`
+
+`30 2 * * 1 certbot renew >> /var/log/le-renew.log`
+
+Hopefully your instance of Nightscout works fine!
