@@ -3,14 +3,19 @@
 ## Table of contents
 * [1. Create a New User](#1.)
 * [2. Prepare for installation](#2.)
- * [2.1 Install NODE.JS with node version manager]
-* [3. Install Mongo DB]
-* [Step 1 – Setup Apt Repository]
-* [Step 2 – Install MongoDB on Ubuntu]
-* [Step 3 – Manage MongoDB Service]
-* [Step 4 – Verify MongoDB Installation]
-* [Step 5 – Configure MongoDB]
-
+ * [2.1 Install NODE.JS with node version manager](#2.1)
+* [3. Install Mongo DB](#3.)
+* [Step 1 – Setup Apt Repository](#3.1)
+* [Step 2 – Install MongoDB on Ubuntu](#3.2)
+* [Step 3 – Manage MongoDB Service](#3.3)
+* [Step 4 – Verify MongoDB Installation](#3.4)
+* [Step 5 – Configure MongoDB](#3.5)
+* [4](#4.)
+* [5](#5.)
+* [6](#6.)
+* [7](#7.)
+* [8](#8.)
+* [9](#9.)
 
 When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
@@ -76,6 +81,7 @@ If you want to install another version of nodejs, remove the old one:
 
  `$ sudo apt purge nodejs`
 
+<a name="2.1"></a>
 ### 2.1 Install NODE.JS with node version manager
 
 To install Node js on Ubuntu 18.04 with NVM we need C++ copiler and some other tools. To install them run command:
@@ -118,8 +124,10 @@ And now can be removed:
 
  `$ nvm uninstall 10.0`
 
+<a name="3."></a>
 ## 3. Install Mongo DB
 
+<a name="3.1"></a>
 ### Step 1 – Setup Apt Repository
 
 First of all, import GPK key for the MongoDB apt repository on your system using the following command. This is required to test packages before installation
@@ -130,6 +138,7 @@ Lets add MongoDB APT repository url in /etc/apt/sources.list.d/mongodb.list.
 
 `$ echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb.list`
 
+<a name="3.2"></a>
 ### Step 2 – Install MongoDB on Ubuntu
 
 After adding required APT repositories, use the following commands to install MongoDB on your systems. It will also install all dependent packages required for MongoDB.
@@ -142,6 +151,7 @@ If you want to install any specific version of MongoDB, define the version numbe
 
 `$ sudo apt install mongodb-org=4.2.9 mongodb-org-server=4.2.9 mongodb-org-shell=4.2.9 mongodb-org-mongos=4.2.9 mongodb-org-tools=4.2.9`
 
+<a name="3.3"></a>
 ### Step 3 – Manage MongoDB Service
 
 After installation, MongoDB will start automatically. To start or stop MongoDB uses init script. Below are the example commands to do.
@@ -156,6 +166,7 @@ Use the following commands to stop or restart MongoDB service.
 
 `$ sudo systemctl restart mongod`
 
+<a name="3.4"></a>
 ### Step 4 – Verify MongoDB Installation
 
 Finally, use the below command to check installed MongoDB version on your system.
@@ -185,6 +196,7 @@ $ mongo
   > quit()
 ```
 
+<a name="3.5"></a>
 ### Step 5 – Configure MongoDB
 
 Then create a new database and a new user:
@@ -195,6 +207,7 @@ $ mongo
 > quit()
 ```
 
+<a name="4."></a>
 ## Install CGM-Remote-Monitor (Nightscout)
 Check you location:
 ```
@@ -244,12 +257,14 @@ We should make start.sh executable:
 
 `$ chmod +100 +010 start.sh `
 
+<a name="5."></a>
 ## Run Nightscout
 
 You can now run Nightscout by entering:
 
 `$ ./start.sh.`
 
+<a name="6."></a>
 ## Create Reverse nginx proxy
 
 Install nginx:
@@ -282,6 +297,7 @@ Then restart the nginx service:
 
 `$ sudo service nginx restart`
 
+<a name="7."></a>
 ## Create a service
 
 I recommend using a systemd service which automatically starts Nightscout on system startup. To do so, create file:
@@ -318,12 +334,14 @@ Finally check if the service is running:
 
 `$ sudo systemctl status nightscout.service`
 
+<a name="8."></a>
 ## Let's Encrypt SSL
 
 install Let's Encrypt: 
 
 `$ sudo apt-get install letsencrypt python-certbot-nginx`
 
+<a name="9."></a>
 ### Obtain SSL certificate using webroot plugin
 
 Stop ngnix service: 
