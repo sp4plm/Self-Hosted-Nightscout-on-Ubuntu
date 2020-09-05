@@ -220,8 +220,6 @@ export PUMP_FIELDS="reservoir battery status"
 export DEVICESTATUS_ADVANCED=true
 export ENABLE="careportal iob cob openaps pump bwg rawbg basal"
 export TIME_FORMAT=24
-
-# (Just for test that server is work). The line below shall be removed after ssl is organised:
 export INSECURE_USE_HTTP=true
 
 # start server
