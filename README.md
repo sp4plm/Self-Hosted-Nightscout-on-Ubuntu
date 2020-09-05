@@ -1,8 +1,8 @@
 # VPS-Hosted-Nightscout-on-Ubuntu 18
 
 ## Table of contents
-* [1. Create a New User]
-* [2. Prepare for installation]
+* [1. Create a New User](1)
+* [2. Prepare for installation](2)
  * [2.1 Install NODE.JS with node version manager]
 * [3. Install Mongo DB]
 * [Step 1 – Setup Apt Repository]
@@ -14,6 +14,7 @@
 
 When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
+<a name="1"></a>
 ## 1. Create a New User
 Once you are logged in your Ubuntu instance as root, you are prepared to add the new user account that we will use to log in from now on.
 
@@ -34,7 +35,7 @@ $ grep '^sudo' /etc/group
 
 sudo:x:27:ihc,mainuser
 ```
-
+<a name="2"></a>
 ## 2. Prepare for installation
 
 Update the Ubuntu instance:
