@@ -16,6 +16,7 @@
 * [6. Create a Nightscout service](#6.)
 * [7. Let's Encrypt SSL](#7.)
 
+## 
 When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
 <a name="1."></a>
