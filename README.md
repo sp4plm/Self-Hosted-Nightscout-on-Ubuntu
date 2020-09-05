@@ -10,12 +10,11 @@
 * [Step 3 – Manage MongoDB Service](#3.3)
 * [Step 4 – Verify MongoDB Installation](#3.4)
 * [Step 5 – Configure MongoDB](#3.5)
-* [4](#4.)
-* [5](#5.)
-* [6](#6.)
-* [7](#7.)
-* [8](#8.)
-* [9](#9.)
+* [4. Install CGM-Remote-Monitor (Nightscout)](#4.)
+* [5. Run Nightscout](#5.)
+* [6. Create Reverse nginx proxy](#6.)
+* [7. Create a Nightscout service](#7.)
+* [8. Let's Encrypt SSL](#8.)
 
 When you obtain your Ubuntu instance from VPS provider you receive root's login and root's password. From this moment follow the procedure.
 
@@ -208,7 +207,7 @@ $ mongo
 ```
 
 <a name="4."></a>
-## Install CGM-Remote-Monitor (Nightscout)
+## 4. Install CGM-Remote-Monitor (Nightscout)
 Check you location:
 ```
 $ pwd
@@ -258,14 +257,14 @@ We should make start.sh executable:
 `$ chmod +100 +010 start.sh `
 
 <a name="5."></a>
-## Run Nightscout
+## 5. Run Nightscout
 
 You can now run Nightscout by entering:
 
 `$ ./start.sh.`
 
 <a name="6."></a>
-## Create Reverse nginx proxy
+## 6. Create Reverse nginx proxy
 
 Install nginx:
 
@@ -298,7 +297,7 @@ Then restart the nginx service:
 `$ sudo service nginx restart`
 
 <a name="7."></a>
-## Create a service
+## 7. Create a Nightscout service
 
 I recommend using a systemd service which automatically starts Nightscout on system startup. To do so, create file:
 
@@ -335,14 +334,11 @@ Finally check if the service is running:
 `$ sudo systemctl status nightscout.service`
 
 <a name="8."></a>
-## Let's Encrypt SSL
+## 8. Let's Encrypt SSL
 
 install Let's Encrypt: 
 
 `$ sudo apt-get install letsencrypt python-certbot-nginx`
-
-<a name="9."></a>
-### Obtain SSL certificate using webroot plugin
 
 Stop ngnix service: 
 
