@@ -256,14 +256,14 @@ We should make start.sh executable:
 
 `$ chmod +100 +010 start.sh `
 
-<a name="5."></a>
+<a name="4.1"></a>
 ### 4.1 Run Nightscout
 
 You can now run Nightscout by entering:
 
 `$ ./start.sh.`
 
-<a name="6."></a>
+<a name="5."></a>
 ## 5. Create Reverse nginx proxy
 
 Install nginx:
@@ -296,7 +296,7 @@ Then restart the nginx service:
 
 `$ sudo service nginx restart`
 
-<a name="7."></a>
+<a name="6."></a>
 ## 6. Create a Nightscout service
 
 I recommend using a systemd service which automatically starts Nightscout on system startup. To do so, create file:
@@ -333,8 +333,8 @@ Finally check if the service is running:
 
 `$ sudo systemctl status nightscout.service`
 
-<a name="8."></a>
-## 6. Let's Encrypt SSL
+<a name="7."></a>
+## 7. Let's Encrypt SSL
 
 install Let's Encrypt: 
 
