@@ -1,8 +1,8 @@
 # VPS-Hosted-Nightscout-on-Ubuntu 18
 
 ## Table of contents
-* [1. Create a New User](1.)
-* [2. Prepare for installation](2.)
+* [1. Create a New User](#1.)
+* [2. Prepare for installation](#2.)
  * [2.1 Install NODE.JS with node version manager]
 * [3. Install Mongo DB]
 * [Step 1 – Setup Apt Repository]
