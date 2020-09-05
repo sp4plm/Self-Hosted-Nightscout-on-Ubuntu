@@ -68,7 +68,7 @@ To install Node js on Ubuntu 18.04 with NVM we need C++ copiler and some other t
 
  `$ sudo apt install build-essential checkinstall`
 
-We also nedd libssl:
+We also need libssl:
 
  `$ sudo apt install libssl-dev`
 
