@@ -255,7 +255,7 @@ export INSECURE_USE_HTTP=true
 
 We should make start.sh executable:
 
-`$ chmod +100 +010 start.sh `
+`$ chmod +755 start.sh `
 
 <a name="4.1"></a>
 ### 4.1 Run Nightscout
