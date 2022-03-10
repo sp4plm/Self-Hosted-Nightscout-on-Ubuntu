@@ -239,15 +239,35 @@ Paste those lines (a detailed description of the variables is here):
 #!/bin/bash
 
 # environment variables
-export DISPLAY_UNITS="mg/dl"
+export DISPLAY_UNITS="mmol/L"
 export MONGO_CONNECTION="mongodb://mainuser:YouPassword@localhost:27017/Nightscout"
 export BASE_URL="127.0.0.1:1337"
 export API_SECRET="YOUR_API_SECRET_HERE"
 export PUMP_FIELDS="reservoir battery status"
+export OPENAPS_FIELDS="ion meal-assist rssi"
 export DEVICESTATUS_ADVANCED=true
-export ENABLE="careportal iob cob openaps pump bwg rawbg basal"
+export ENABLE="careportal iob cob sage openaps loop pump profile bwg rawbg basal"
 export TIME_FORMAT=24
 export INSECURE_USE_HTTP=true
+export ALARM_HIGH=off
+export ALARM_LOW=off
+export ALARM_TIMEAGO_URGENT=on
+export ALARM_TIMEAGO_URGENT_MINS=30
+export ALARM_TIMEAGO_WARN=on
+export ALARM_TIMEAGO_WARN_MINS=15
+export BG_HIGH=200
+export BG_LOW=80
+export BG_TARGET_BOTTOM=100
+export BG_TARGET_TOP=170
+export CUSTOM_TITLE=LenaCGMS
+export DISPLAY_UNITS=mmol
+export PUMP_ENABLE_ALERTS=true
+export PUMP_URGENT_BATT_V=1.32
+export SAGE_URGENT=330
+export SAGE_WARN=312
+export SHOW_FORECAST=openaps
+export THEME=colors
+export TIME_FORMAT=24
 
 # start server
 /home/mainuser/.nvm/versions/node/v10.16.3/bin/node server.js
