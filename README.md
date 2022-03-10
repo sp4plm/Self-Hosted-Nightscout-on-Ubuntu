@@ -239,7 +239,6 @@ Paste those lines (a detailed description of the variables is here):
 #!/bin/bash
 
 # environment variables
-export DISPLAY_UNITS="mmol/L"
 export MONGO_CONNECTION="mongodb://mainuser:YouPassword@localhost:27017/Nightscout"
 export BASE_URL="127.0.0.1:1337"
 export API_SECRET="YOUR_API_SECRET_HERE"
