@@ -266,7 +266,6 @@ export SAGE_URGENT=330
 export SAGE_WARN=312
 export SHOW_FORECAST=openaps
 export THEME=colors
-export TIME_FORMAT=24
 
 # start server
 /home/mainuser/.nvm/versions/node/v10.16.3/bin/node server.js
